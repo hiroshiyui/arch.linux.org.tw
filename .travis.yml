@@ -5,15 +5,13 @@ before_install:
 - git config --global user.email "travis@travis-ci.org"
 - git config --global user.name "Travis CI"
 - git remote set-url origin https://hiroshiyui:${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git
-- git branch
 install:
 - bundle install
 script:
+- git checkout ${TRAVIS_BRANCH}
 - jekyll build
 - git add -f docs
 - git commit -m "Travis build ${TRAVIS_BUILD_NUMBER} of ${TRAVIS_BRANCH} in ${TRAVIS_REPO_SLUG}"
-- git log | head -n +50
-- git remote -v
 - git push origin ${TRAVIS_BRANCH}
 env:
   global:
