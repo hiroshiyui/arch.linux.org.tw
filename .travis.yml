@@ -12,6 +12,7 @@ script:
 - git add -f docs
 - git commit -m "Travis build ${TRAVIS_BUILD_NUMBER} of ${TRAVIS_BRANCH} in ${TRAVIS_REPO_SLUG}"
 - git log | head -n +50
+- git remote -v
 - git push source ${TRAVIS_BRANCH}
 env:
   global:
