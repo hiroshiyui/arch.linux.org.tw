@@ -10,7 +10,7 @@ script:
 - git config --global user.name "Travis CI"
 - git commit -m "Travis build ${TRAVIS_BUILD_NUMBER}"
 - git remote add origin https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git > /dev/null 2>&1
-- git push $TRAVIS_BRANCH
+- git push origin $TRAVIS_BRANCH
 env:
   global:
     secure: KWAv9wYagZ+RP6+BSotYLSQSWAeuIzpjsJvCNrIYFRjnFno1nVA6RTXZI+omXhBsJFqhC4Fytc1sV6OPdwJRvuG1UiYTtC0E6o2j2tBhvdydn+0alyCuXJCj0MMqKxNOp+kHNKM5UCUOZ3iGkPuzMdiOv1g5MapoGrRfUx/bCrc=
