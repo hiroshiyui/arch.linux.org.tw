@@ -1,6 +1,8 @@
 language: ruby
 rvm:
 - ruby-2.5.1
+before_install:
+- echo -e "machine github.com\n  login ${GH_TOKEN}" > ~/.netrc
 install:
 - bundle install
 script:
@@ -10,7 +12,7 @@ script:
 - git config --global user.name "Travis CI"
 - git commit -m "Travis build ${TRAVIS_BUILD_NUMBER} of ${TRAVIS_BRANCH} in ${TRAVIS_REPO_SLUG}"
 - git log | head -n +50
-- git remote add origin https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git > /dev/null 2>&1
+- git remote add origin https://hiroshiyui:${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git > /dev/null 2>&1
 - git push origin ${TRAVIS_BRANCH}
 env:
   global:
