@@ -8,10 +8,10 @@ script:
 - git add -f docs
 - git config --global user.email "travis@travis-ci.org"
 - git config --global user.name "Travis CI"
-- git commit -m "Travis build ${TRAVIS_BUILD_NUMBER}"
+- git commit -m "Travis build ${TRAVIS_BUILD_NUMBER} of ${TRAVIS_BRANCH} in ${TRAVIS_REPO_SLUG}"
 - git log | head -n +50
 - git remote add origin https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git > /dev/null 2>&1
-- git push origin $TRAVIS_BRANCH
+- git push origin ${TRAVIS_BRANCH}
 env:
   global:
     secure: "Gg3x9KYt+setYWxkbeINk2g6zHDg2VwWYg+LEVmJm8VHhFZHArj3lshvyAgQrfMj+YS+kz0rOwt5vDu9Mi0zE89iBF5f/TUtwOTyoXZnpzTi8fZc4nhQwjBBm4Nph5PkfJn7lt/LaLqdeVXsqFo6KmzxXXF7dmu9XGXqvEAULVdEwpxvITcmejdt9APl3hsgPRgjjOkMqWj0Zr/eDQp9pNCZmDKcjl2hy0eGYX1EjRyGwqfQSr8HVAwDNI2YudWTl7XO/x7NIMS3W4euJtTye9OzyY90ZFBIWvCtqwSPE5dn34Vw6g0OEDVazUXsFoHCVFlxZnDqeYDe8BOWUNRqmuWrB0azGYlkrlJcjSgv2FiD7TNcyG0P0h/CEGArqSq1R5i4fzvhZV8Dww8zemYON/VJp7/S8k3QVp2sGHnQvDVdUBPlosdEcnYzcZ9euUkcDxrShCMU9+seEyyRCh3dxbvUk8GGuW3IzbpmD7spctnnl1AFUCv03zvlKCKBv79/m8bkuqoK2fHASKw1TwDyNZKMLjn50pBVX1T7IGq0cBElZqI09LHqa6VYx75PaIUlrX5eKzHV+/7qfjYC010O9D9YyfLywp4fSU3xom8UlWzC2+HM7hIlH1UDw7oXaeURlbIh103pzz95A9Y9L70oa/QxqCojc5X3JXwiXLIkV8E="
