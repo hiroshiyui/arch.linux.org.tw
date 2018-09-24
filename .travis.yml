@@ -5,3 +5,8 @@ install:
   - bundle install
 script:
   - jekyll build
+  - git add -f docs
+  - git config --global user.email "travis@travis-ci.org"
+  - git config --global user.name "Travis CI"
+  - git commit -m "Travis build $TRAVIS_BUILD_NUMBER"
+  - git push $TRAVIS_BRANCH
