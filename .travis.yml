@@ -2,6 +2,6 @@ language: ruby
 rvm:
   - ruby-2.5.1
 install:
-  - gem install rake
+  - bundle install
 script:
   - jekyll build
